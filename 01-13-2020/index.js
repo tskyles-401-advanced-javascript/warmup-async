@@ -17,21 +17,26 @@ const fetchPeoplewithPromises = () => {
     .then(result => {
       Promise.all(result)
         .then(result => {
-          result.forEach(promise => console.log(promise.body.name));
+          result.forEach(promise => console.log('promise', promise.body.name));
         });
     })
     .catch(e => console.error(e));
 };
 
-const fetchPeoplewithAsync = async () => {
+async function fetchPeoplewithAsync() {
   try{
-    superagent.get;
+    const fullList = await superagent.get(url);
+    const resultArr = fullList.body.results;
+    const urlArr = resultArr.map(person => person.url);
+    const returnedPromisesArr = await Promise.all(urlArr.map(url => superagent(url)));
+    returnedPromisesArr.forEach(promise => console.log('async', promise.body.name));
   }
   catch(e){
     console.error(e);
   }
-};
+}
 
-// fetchPeoplewithPromises();
+fetchPeoplewithPromises();
+fetchPeoplewithAsync();
 
 app.listen(3000, () => console.log('app is on 3000'));
