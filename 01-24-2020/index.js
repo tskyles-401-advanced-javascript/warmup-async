@@ -23,5 +23,20 @@ const fetchPeoplewithPromises = () => {
     .catch(e => console.error(e));
 };
 
+async function fetchPeoplewithAsync() {
+  try{
+    const fullList = await superagent.get(url);
+    const resultArr = fullList.body.results;
+    const urlArr = resultArr.map(person => person.url);
+    const returnedPromisesArr = await Promise.all(urlArr.map(url => superagent(url)));
+    returnedPromisesArr.forEach(promise => console.log('async', promise.body.name));
+  }
+  catch(e){
+    console.error(e);
+  }
+}
+
+fetchPeoplewithPromises();
+fetchPeoplewithAsync();
 
 app.listen(3000, () => console.log('app is on 3000'));
