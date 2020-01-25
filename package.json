@@ -1,0 +1,29 @@
+{
+  "name": "warmup-async",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "lint": "eslint **/*.js",
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --watchAll --verbose --coverage",
+    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tskyles-401-advanced-javascript/warmup-async.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tskyles-401-advanced-javascript/warmup-async/issues"
+  },
+  "homepage": "https://github.com/tskyles-401-advanced-javascript/warmup-async#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "superagent": "^5.2.1"
+  }
+}
