@@ -21,4 +21,17 @@ const fetchPeopleWithPromises = () => {
     .catch(error => console.error(error));
 };
 
+const fetchPeoplewithAsync = async () => {
+  try{
+    const data= await superagent.get(url);
+    const peopleData = data.body.results;
+    const peopleUrls = peopleData.map(people => people.url);
+    const peoplePromises = await Promise.all(peopleUrls.map(url => superagent(url)));
+
+    peoplePromises.forEach(person => console.log('async', person.body.name));
+  }
+  catch(error){console.error(error);}
+};
+
 fetchPeopleWithPromises();
+fetchPeoplewithAsync();
