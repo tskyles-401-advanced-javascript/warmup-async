@@ -1,0 +1,30 @@
+{
+  "name": "warmup-async",
+  "version": "1.0.0",
+  "description": "## Setup * Work in a repository for this warmup exercise (`warmup-async`)   * On each day, create a new folder and branch of this repo with the date     * i.e. `YYYY-MM-DD`   * Submit a PR from that branch to your master for review   * If you are deploying to Heroku or Code Sandbox, provide that link as well   * Timebox this to 1 hour",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "lint": "eslint **/*.js",
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --watchAll --verbose --coverage",
+    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tskyles-401-advanced-javascript/warmup-async.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tskyles-401-advanced-javascript/warmup-async/issues"
+  },
+  "homepage": "https://github.com/tskyles-401-advanced-javascript/warmup-async#readme",
+  "dependencies": {
+    "superagent": "^5.2.1"
+  }
+}
